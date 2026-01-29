@@ -1,0 +1,70 @@
+:root {
+    --bg-color: #0f0f12;
+    --text-color: #ffffff;
+    --accent-color: #7000ff;
+    --card-bg: #1a1a20;
+}
+
+[data-theme="light"] {
+    --bg-color: #f0f0f0;
+    --text-color: #121212;
+    --card-bg: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 5%;
+    align-items: center;
+    background: rgba(0,0,0,0.2);
+}
+
+.hero {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(45deg, #1a1a20, #7000ff);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 5%;
+}
+
+.game-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+}
+
+.game-info {
+    padding: 15px;
+}
+
+.cta-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    font-weight: bold;
+}
