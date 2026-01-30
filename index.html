@@ -170,7 +170,13 @@
     </div>
 
     <script type="module">
-      
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase, ref, onValue, set, update, push, remove, onDisconnect } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+        const firebaseConfig = { apiKey: "AIzaSyDgRvxKypPsOx379SNleE6Uij7mKkEJxGY", databaseURL: "https://monglearcade-default-rtdb.firebaseio.com", projectId: "monglearcade" };
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
         let userRef, myID, selectedID, isAdmin = false, gameData = [];
         let favs = JSON.parse(localStorage.getItem('favs') || '[]');
         let cfg = { url: localStorage.getItem('pUrl') || 'https://google.com', key: localStorage.getItem('pKey') || 'Escape', mode: localStorage.getItem('pMode') || 'tab', enable: localStorage.getItem('pEnable') !== 'false' };
