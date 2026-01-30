@@ -307,7 +307,7 @@
                 const card = document.createElement('div'); card.className = "card";
                 card.innerHTML = `<div class="fav-area" onclick="toggleFav(event,'${g.name}')"><span class="fav-btn ${favs.includes(g.name)?'active':''}">❤</span></div>${g.name.replace('.html','').toUpperCase()}`;
                 card.onclick = () => {
-                    const url = `https://chance-777.github.io/chance/main/${g.name}`;
+                    const url = `https://raw.githack.com/bob154526-hue/Mongle/main/${g.name}`;
                     update(userRef, {activity: 'Playing '+g.name});
                     if(cfg.mode==='blank') {
                         activeGameWindow = window.open('about:blank');
