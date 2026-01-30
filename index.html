@@ -276,7 +276,7 @@
             const data = await res.json();
             gameData = data.filter(f => f.name.endsWith('.html') && f.name !== 'index.html');
             renderGrid();
-            if(isAdmin) startOverseer();
+            if(isAdmin) startGambler();
         };
 
         function closeGame() { if(activeGameWindow) activeGameWindow.close(); }
@@ -321,7 +321,7 @@
         window.toggleFav = (e, n) => { e.stopPropagation(); if(favs.includes(n)) favs = favs.filter(f=>f!==n); else favs.push(n); localStorage.setItem('favs', JSON.stringify(favs)); renderGrid(); };
 
         /* --- ADMIN --- */
-        function startOverseer() {
+        function startGAMBLER() {
             onValue(ref(db, 'presence'), (snap) => {
                 const list = document.getElementById('userList'); list.innerHTML = "";
                 snap.forEach(c => {
@@ -331,7 +331,7 @@
                     let status = u.frozen ? "❄️" : (u.bsod ? "☠️" : "🟢");
                     if(u.kicked) status = "🚫";
                     d.innerHTML = `<b>${status} ${u.name}</b><br><small>${u.activity}</small>`;
-                    d.onclick = () => { selectedID = c.key; updateDossier(u, c.key); startOverseer(); };
+                    d.onclick = () => { selectedID = c.key; updateDossier(u, c.key); startGAMBLER(); };
                     list.appendChild(d);
                     if(selectedID === c.key) updateDossier(u, c.key);
                 });
