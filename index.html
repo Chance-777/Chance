@@ -100,7 +100,7 @@
                 <input type="text" id="search" class="input" style="margin:0; max-width: 300px;" placeholder="Search Database..." oninput="renderGrid()">
             </div>
             <div style="display:flex; gap:8px; min-width: 150px; justify-content: flex-end;">
-                <button id="adminBtn" class="btn" style="display:none; background: #222; color: var(--primary); border: 1px solid var(--primary);" onclick="toggleModal('adminM')">OVERSEER</button>
+                <button id="adminBtn" class="btn" style="display:none; background: #222; color: var(--primary); border: 1px solid var(--primary);" onclick="toggleModal('adminM')">GAMBLER</button>
                 <button class="btn" style="background:#222; color:#fff;" onclick="toggleModal('settingsM')">⚙️</button>
                 <button class="btn btn-red" onclick="panicTrigger()">PANIC</button>
             </div>
@@ -110,7 +110,7 @@
 
     <div id="adminM" class="modal">
         <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #333; padding-bottom:10px; margin-bottom:15px;">
-            <h3 style="margin:0; color:var(--primary);">OVERSEER_CONTROL_DECK</h3>
+            <h3 style="margin:0; color:var(--primary);">GAMBLER_CONTROL_DECK</h3>
             <div>
                 <button class="btn btn-warn" onclick="globalReload()">NUKE (RELOAD ALL)</button>
                 <button class="btn" style="background:#222; color:#fff;" onclick="toggleModal('adminM')">CLOSE</button>
@@ -192,7 +192,7 @@
 
         window.door = (type) => {
             if(type === 'admin') {
-                if(prompt("AUTH_CODE:") === "GAMBLING_IS_FUN") { isAdmin = true; document.getElementById('adminBtn').style.display="block"; document.getElementById('badge').innerText="[OVERSEER]"; initSession(); }
+                if(prompt("AUTH_CODE:") === "GAMBLING_IS_FUN") { isAdmin = true; document.getElementById('adminBtn').style.display="block"; document.getElementById('badge').innerText="[GAMBLER]"; initSession(); }
             } else { document.getElementById('loginOverlay').style.display = 'flex'; }
         };
 
