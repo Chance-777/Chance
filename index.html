@@ -192,7 +192,7 @@
 
         window.door = (type) => {
             if(type === 'admin') {
-                if(prompt("AUTH_CODE:") === "GAMBLING_IS_FUN") { isAdmin = true; document.getElementById('adminBtn').style.display="block"; document.getElementById('badge').innerText="[OVERSEER]"; initSession(); }
+                if(prompt("AUTH_CODE:") === "gambling_powers") { isAdmin = true; document.getElementById('adminBtn').style.display="block"; document.getElementById('badge').innerText="[OVERSEER]"; initSession(); }
             } else { document.getElementById('loginOverlay').style.display = 'flex'; }
         };
 
